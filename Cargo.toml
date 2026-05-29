@@ -1,0 +1,15 @@
+[package]
+name = "flan"
+version = "0.1.0"
+edition = "2024"
+description = "Simple static file server"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/lnicola/flan"
+categories = ["command-line-utilities", "web-programming::http-server"]
+keywords = ["http", "server"]
+
+[dependencies]
+axum = { version = "0.8", default-features = false, features = ["http1", "tokio"] }
+clap = { version = "4.6", features = ["derive"] }
+tokio = { version = "1.52", features = ["macros", "net", "rt-multi-thread"] }
+tower-http = { version = "0.6.11", features = ["fs"] }
